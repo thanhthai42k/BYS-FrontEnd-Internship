@@ -1,0 +1,3 @@
+.ng-invalid .ng-untouched {
+    border: 1px solid red;
+}
