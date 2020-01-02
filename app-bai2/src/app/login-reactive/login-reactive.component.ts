@@ -11,7 +11,7 @@ export class LoginReactiveComponent implements OnInit {
 formreactive: FormGroup;
   constructor(private service : MyserviceService, private fb: FormBuilder) {
     this.formreactive = fb.group({
-      newusername : ['',[Validators.required, customvalid, Validators.minLength(6)]] ,
+      newusername : ['',[Validators.required, customvalid, Validators.minLength(6), Validators.email]] ,
       newpassword: ['',[Validators.required, Validators.minLength(6)]],  
     })
    }
@@ -37,5 +37,5 @@ function customvalid (formControl: FormControl) {
    return null;
  }
  else
- return 'email không đúng';
+return true;
 }

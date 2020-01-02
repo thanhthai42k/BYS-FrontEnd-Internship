@@ -5,15 +5,16 @@
             <div class="form-group p-2 mx-2">
                 <input class="form-control" type="text" placeholder="Email" formControlName ="newusername">
                 <div *ngIf="formreactive.touched && formreactive.controls.newusername?.errors?.required" class="text-center text-danger col alert alert-danger" role="alert">Email không được để trống</div>
-                <small *ngIf=" formreactive.controls.newusername?.errors?.minlength" class="text-center text-danger">Email không được dưới 6 kí tự</small>
+                <!-- <div *ngIf="formreactive.touched && formreactive.controls.newusername?.errors?.email" class="text-center text-danger col alert alert-danger" role="alert">Định dạng email không đúng</div> -->
+                <div *ngIf=" formreactive.controls.newusername?.errors?.minlength" class="text-center text-danger col alert alert-danger"><small>Email không được dưới 6 kí tự </small></div>
             </div>
             <div class="form-group p-2 mx-2">
                 <input class="form-control" type="password" placeholder="Mật khẩu" formControlName ="newpassword" >
                 <div *ngIf="formreactive.touched && formreactive.controls.newpassword?.errors?.required"class="text-center text-danger alert alert-danger" role="alert">Mật khẩu không được trống</div>
-                <small *ngIf=" formreactive.controls.newpassword?.errors?.minlength "class="text-center text-danger">Mật khẩu không được dưới 6 kí tự</small>
+                <div *ngIf=" formreactive.controls.newpassword?.errors?.minlength "class="text-center text-danger alert alert-danger"><small>Mật khẩu không được dưới 6 kí tự</small></div>
             </div>
             <div class="d-flex justify-content-center mb-3 ">
-                <button [disabled]="formreactive.invalid" class="btn btn-primary">Đăng Nhập </button>
+                <button [disabled]="formreactive.invalid" class="btn btn-primary">Đăng Nhập</button>
             </div>   
             
         </div>       
