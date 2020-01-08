@@ -1,0 +1,26 @@
+<app-student-form *ngIf= "isShow"></app-student-form>
+<div class="d-flex justify-content-center">
+    <table class=" table table-striped w-75">
+        <thead>
+            <tr class="bg-primary text-white">
+                <th scope="col">#MSSV</th>
+                <th scope="col">TÊN</th>
+                <th scope="col">NGÀY SINH</th>
+                <th scope="col">KHOA</th>
+                <th scope="col">CHUYÊN NGHÀNH</th>
+                <th scope="col">LỚP</th>
+            </tr>
+            <tr *ngFor = "let i of service.arrStudent">
+                <th scope="col">{{i.MSSV}}</th>
+                <th scope="col">{{i.Ten}}</th>
+                <th scope="col">{{i.NgaySinh}}</th>
+                <th scope="col">{{i.Khoa}}</th>
+                <th scope="col">{{i.ChuyenNghanh}}</th>
+                <th scope="col">{{i.Lop}}</th>
+            </tr>
+            <div class="d-flex justify-content-center my-3">
+                <button class="btn btn-primary text-light" (click)="isShow = !isShow">Add Student</button>
+            </div>
+        </thead>
+    </table>
+</div>
