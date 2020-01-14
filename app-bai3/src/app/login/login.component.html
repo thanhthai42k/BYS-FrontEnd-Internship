@@ -1,17 +1,20 @@
-<div>
-    <form class="card">
-        <div class="card-header text-dark text-center">ĐĂNG NHẬP</div>
+<div style="height:100vh;" class="d-flex justify-content-center align-items-center">
+    <form class="card w-25 h-50">
+        <div class="card-header text-center bg-primary text-white">ĐĂNG NHẬP</div>
         <div class="card-body">
             <div class="form-group">
                 <div class="text-dark">Email</div>
-                <input type="email" class="form-control">
+                <input type="email" class="form-control" required minlength="6">
             </div>
             <div class="form-group">
                 <div class="text-dark">Password</div>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" required minlength="6">
             </div>
             <div class="d-flex justify-content-center">
-                <button routerLink="../student" class="btn btn-primary text-center">ĐĂNG NHẬP</button>
+                <button class="btn btn-primary text-center">ĐĂNG NHẬP</button>
+            </div>
+            <div class="d-flex justify-content-center my-3">
+                <a href="#">Quên mật khẩu?</a>
             </div>
         </div>
     </form>

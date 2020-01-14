@@ -31,14 +31,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // }
 // ]
 const routes : Routes = [
-              { path: 'create' , component : StudentCreateComponent},
-              { path: 'list' , component : StudentListComponent},
-              { path: 'edit' , component : StudentEditComponent},
-              { path: 'form' , component : StudentFormComponent},
-              { path: 'detail' , component : StudentDetailComponent}
+              // { path: 'student' , redirectTo: '/list', pathMatch: 'full'},
+              { path: 'student/create' , component : StudentCreateComponent},
+              { path: 'student/list' , component : StudentListComponent},
+              { path: 'student/edit/:mssv' , component : StudentEditComponent},
+              { path: 'student/form' , component : StudentFormComponent},
+              { path: 'student/detail' , component : StudentDetailComponent}
 ]
-
-
 @NgModule({
 
   declarations: [StudentListComponent, StudentDetailComponent, StudentEditComponent, StudentCreateComponent, StudentFormComponent],

@@ -1,10 +1,10 @@
  <div class=" d-flex justify-content-center">
     <div class="w-50 card">
         <div class="card-body border ">
-            <form (ngSubmit) ="addStudent();"[formGroup] ="form">
+            <form (ngSubmit) ="addStudent();"[formGroup] ="form" >
                 <div class="form-group">
                     <label>Mã Số Sinh Viên</label>
-                    <input type="text" class="form-control" formControlName="mssv"  >
+                    <input type="text" formControlName="mssv" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Họ và Tên</label>
@@ -17,13 +17,14 @@
                 <div class="form-group">
                     <label>Khoa</label>
                     <select class="form-control" formControlName ="khoa">
-                        <option>Thống Kê - Tin học</option>
+                        <option >Thống Kê - Tin học</option>
                         <option>Kinh Tế</option>
-                        <option>Thương Mại Điện Tử</option>
+                        <option value="1">Thương Mại Điện Tử</option>
                         <option>Luật</option>
                         <option>Kế Toán</option>
                         <option>Ngân Hàng</option>
                         <option>Lý Luận Chính Trị</option>
+                        <option>Quản Trị Kinh Doanh</option>
                     </select>
                 </div>
                 <div class="form-group">

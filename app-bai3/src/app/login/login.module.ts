@@ -6,7 +6,6 @@ import { LoginComponent } from './login.component';
 import {StudentService} from '../student.service';
 
 
-
 @NgModule({
   declarations: [
     LoginComponent

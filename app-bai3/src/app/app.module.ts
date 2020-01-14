@@ -6,6 +6,7 @@ import {StudentService} from './student.service';
 import {StudenetModule} from './student/student.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent

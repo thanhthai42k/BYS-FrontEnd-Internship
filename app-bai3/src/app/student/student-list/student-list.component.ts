@@ -14,4 +14,10 @@ export class StudentListComponent implements OnInit {
     
   }
 isShow = false;
+
+
+removeStudent (MSSV : number) {
+  const index = this.service.arrStudent.findIndex(i => i.MSSV === MSSV);
+  this.service.arrStudent.splice(index,1);
+}
 }

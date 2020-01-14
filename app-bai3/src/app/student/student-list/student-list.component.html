@@ -1,7 +1,6 @@
-<app-student-form *ngIf= "isShow"></app-student-form>
 <div class="d-flex justify-content-center">
-    <table class=" table table-striped w-75">
-        <thead>
+    <table class=" table table-striped w-75 ">
+        <thead class="border">
             <tr class="bg-primary text-white">
                 <th scope="col">#MSSV</th>
                 <th scope="col">TÊN</th>
@@ -9,18 +8,26 @@
                 <th scope="col">KHOA</th>
                 <th scope="col">CHUYÊN NGHÀNH</th>
                 <th scope="col">LỚP</th>
+                <th scope="col">Thao Tác</th>
             </tr>
-            <tr *ngFor = "let i of service.arrStudent">
+            <tr *ngFor = "let i of service.arrStudent" class="align-items-center">
                 <th scope="col">{{i.MSSV}}</th>
                 <th scope="col">{{i.Ten}}</th>
                 <th scope="col">{{i.NgaySinh}}</th>
                 <th scope="col">{{i.Khoa}}</th>
                 <th scope="col">{{i.ChuyenNghanh}}</th>
                 <th scope="col">{{i.Lop}}</th>
+                <div class="d-flex my-2">
+                <button (click)= "removeStudent(i.MSSV);" class="btn d-flex justify-content-center mx-1" style="height: 30px; width: 30px;"><i class="fas fa-trash-alt"></i></button>
+                <button [routerLink] = "['/student/edit', i.MSSV]" class="btn d-flex justify-content-center mx-1" style="height: 30px; width: 30px;"><i class="fas fa-pencil-alt"></i></button>
+                <button [routerLink] = "['/student//detail']" class="btn d-flex justify-content-center mx-1" style="height: 30px; width: 30px;"><i class="far fa-eye"></i></button>
+                </div>
             </tr>
-            <div class="d-flex justify-content-center my-3">
-                <button class="btn btn-primary text-light" (click)="isShow = !isShow">Add Student</button>
-            </div>
+            
+            <!-- (click)="isShow = !isShow" -->
         </thead>
+        <div class="d-flex justify-content-center my-3">
+            <a [routerLink] = "['/student/create']" class="btn btn-primary text-light" >Add Student</a>
+        </div>
     </table>
 </div>
