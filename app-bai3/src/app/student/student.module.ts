@@ -36,7 +36,7 @@ const routes : Routes = [
               { path: 'student/list' , component : StudentListComponent},
               { path: 'student/edit/:mssv' , component : StudentEditComponent},
               { path: 'student/form' , component : StudentFormComponent},
-              { path: 'student/detail' , component : StudentDetailComponent}
+              { path: 'student/detail/:mssv' , component : StudentDetailComponent}
 ]
 @NgModule({
 

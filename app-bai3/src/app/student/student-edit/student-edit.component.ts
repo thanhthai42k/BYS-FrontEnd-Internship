@@ -16,7 +16,8 @@ export class StudentEditComponent implements OnInit {
   
   ngOnInit ():  void  {
     this.activatedRoute.paramMap.subscribe(res => {
-      const index = this.service.arrStudent.findIndex(i => i.MSSV === +res['params'].mssv);
+      const index = this.service.arrStudent.findIndex(i => i.MSSV  === +res['params'].mssv );
+      console.log(this.service.arrStudent[index]);
       this.student.MSSV =  this.service.arrStudent[index].MSSV;
       this.student.Ten = this.service.arrStudent[index].Ten;
       this.student.NgaySinh = this.service.arrStudent[index].NgaySinh;
@@ -24,6 +25,5 @@ export class StudentEditComponent implements OnInit {
       this.student.ChuyenNghanh = this.service.arrStudent[index].ChuyenNghanh;
       this.student.Lop = this.service.arrStudent[index].Lop;
     })
-    
   }
 }
