@@ -2,7 +2,7 @@
     <div class="w-50 card">
         <div class="card-body border ">
             <form (ngSubmit)="editStudent();" [formGroup] ="form" >
-                <app-student-form [typeAction]="'edit'" [binding]="student"></app-student-form>
+                <app-student-form #formEdit [typeAction]="'edit'" [binding]="student"></app-student-form>
                 <div class="d-flex justify-content-center my-3">
                     <button class=" btn btn-primary">Edit Student</button>
                 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { StudentService } from 'src/app/student.service';
 import { Student } from 'src/model/student';
 import {FormControl, FormGroup} from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -16,12 +17,13 @@ export class StudentCreateComponent implements OnInit {
   @ViewChild('formCreate', { static: true }) formCreate;
   student = new Student();
   form: FormGroup;
-  constructor(private service : StudentService ) { 
+  constructor(private service : StudentService, private activatedRoute: ActivatedRoute,
+    private router: Router ) { 
     
   }
 
   ngOnInit ()  {
-      this.formCreate =  new FormGroup({
+      this.form =  new FormGroup({
         mssv : new FormControl() ,
        ten: new FormControl() ,
        ngaysinh : new FormControl(),
@@ -32,17 +34,19 @@ export class StudentCreateComponent implements OnInit {
       this.student.MSSV = this.service.arrStudent.length + 1;
 }
 addStudent() {
-  console.log(this.formCreate);
+  console.log(this.formCreate.form.value);
   this.service.arrStudent.push(
     {
-      MSSV : this.form.value.mssv,
-      Ten: this.form.value.ten,
-      NgaySinh : this.form.value.ngaysinh,
-      Khoa: this.form.value.khoa,
-      ChuyenNghanh : this.form.value.chuyennghanh,
-      Lop : this.form.value.lop
+      MSSV : this.formCreate.form.value.mssv,
+      Ten: this.formCreate.form.value.ten,
+      NgaySinh : this.formCreate.form.value.ngaysinh,
+      Khoa: this.formCreate.form.value.khoa,
+      ChuyenNghanh : this.formCreate.form.value.chuyennghanh,
+      Lop : this.formCreate.form.value.lop
+      
     }
   )
   alert("Successfully!"); 
+  this.router.navigate(['student/list']);
 }
 }

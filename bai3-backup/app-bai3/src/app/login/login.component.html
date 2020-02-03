@@ -1,14 +1,14 @@
 <div style="height:100vh;" class="d-flex justify-content-center align-items-center">
-    <form class="card w-25 h-50">
+    <form class="card w-25 h-50" (ngSubmit)="submit();" [formGroup]="formLogin">
         <div class="card-header text-center bg-primary text-white">ĐĂNG NHẬP</div>
         <div class="card-body">
             <div class="form-group">
                 <div class="text-dark">Email</div>
-                <input type="email" class="form-control" required minlength="6">
+                <input type="email" class="form-control" required minlength="6" formControlName="email">
             </div>
             <div class="form-group">
                 <div class="text-dark">Password</div>
-                <input type="password" class="form-control" required minlength="6">
+                <input type="password" class="form-control" required minlength="6" formControlName="password">
             </div>
             <div class="d-flex justify-content-center">
                 <button class="btn btn-primary text-center">ĐĂNG NHẬP</button>

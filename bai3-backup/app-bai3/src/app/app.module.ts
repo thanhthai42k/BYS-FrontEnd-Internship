@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import {StudentService} from './student.service';
 import {StudenetModule} from './student/student.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
    
   ],
   imports: [
@@ -17,7 +21,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,
     StudenetModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]

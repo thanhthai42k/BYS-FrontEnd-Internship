@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StudentService } from 'src/app/student.service';
 
 @Component({
@@ -13,8 +13,8 @@ export class StudentListComponent implements OnInit {
   ngOnInit() {
     
   }
-isShow = false;
 
+searchText;
 
 removeStudent (MSSV : number) {
   const index = this.service.arrStudent.findIndex(i => i.MSSV === MSSV);

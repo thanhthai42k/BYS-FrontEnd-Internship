@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
-// import { StudentService } from '../student.service';
+import {FormGroup, FormControl} from '@angular/forms';
+import { StudentService } from '../student.service';
+import { Observable, from } from 'rxjs';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,35 +11,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  // formreactive : FormGroup;
-  // constructor(private fb: FormBuilder, private service: StudentService) { 
-  //   this.formreactive = fb.group({
-  //     newusername : ['',[Validators.required, Validators.minLength(6), Validators.email]] ,
-  //     newpassword: ['',[Validators.required, Validators.minLength(6)]],  
-  //   })
-  // }
+  formLogin : FormGroup;
+  router: any;
+  constructor( private service: StudentService, router : Router, private activatedRoute: ActivatedRoute) { 
+    this.formLogin = new FormGroup ({
+      email : new FormControl(),
+      password: new FormControl()
+    })
+  }
 
   ngOnInit() {
-  }}
+  }
   
-  // submit(){
-  // // console.log(this.service.arrUser, this.formreactive.value.newusername, this.formreactive.value.newpassword);
-  // const isCheckLogin = (this.service.arrUser || []).some(item => {
-  //   if (JSON.stringify({ userName: this.formreactive.value.newusername , password: this.formreactive.value.newpassword })
-  //     === JSON.stringify(item)) {
-  //     alert("Đăng nhập thành công");
-  //     return true;
-  //   }
-  //   return false;
-  // })
-  // if (!isCheckLogin) {
-  //   alert("Đăng nhập thất bại");
-  // }
-  // }}
-// function customvalid (formControl: FormControl) {
-// if(formControl.value.includes('@gmail.com')){
-//  return null;
-// }
-// else
-// return true;
-// }
+  submit(){
+  console.log(this.service.arrUser, this.formLogin.value.email, this.formLogin.value.password);
+  const isCheckLogin = (this.service.arrUser || []).some(item => {
+    if (JSON.stringify({ userName: this.formLogin.value.email , password: this.formLogin.value.password })
+      === JSON.stringify(item)) {
+      alert("Đăng nhập thành công");
+      localStorage.setItem('testObject', JSON.stringify({a: 1, b:2}));
+      // this.router.navigate(['/student/list']);
+      return true;
+    }
+    return false;
+  })
+  if (!isCheckLogin) {
+    alert("Đăng nhập thất bại");
+  }
+  }
+}

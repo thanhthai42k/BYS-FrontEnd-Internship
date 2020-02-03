@@ -8,6 +8,7 @@ import { StudentFormComponent } from './student-form/student-form.component';
 import {StudentService} from '../student.service';
 import { Routes, RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 // const routes : Routes = [
 //   {path: 'student' , component: StudentListComponent,
@@ -45,7 +46,8 @@ const routes : Routes = [
     CommonModule, 
     RouterModule.forChild(routes),
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [StudentService]
 })

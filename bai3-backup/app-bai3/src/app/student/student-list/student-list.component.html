@@ -1,10 +1,17 @@
 <div class="d-flex justify-content-center">
+    <div class="input-group mb-3 w-75 ">
+        <div class="search-hero w-100">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Enter to Search . . .">
+          </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
     <table class=" table table-striped w-75 ">
         <div class="d-flex justify-content-center my-3">
             <a [routerLink] = "['/student/create']" class="btn btn-primary text-light" >Add Student</a>
         </div>
         <thead class="border">
-            <tr class="bg-primary text-white">
+            <tr class="bg-primary text-white text-center">
                 <th scope="col">#MSSV</th>
                 <th scope="col">TÊN</th>
                 <th scope="col">NGÀY SINH</th>
@@ -13,7 +20,7 @@
                 <th scope="col">LỚP</th>
                 <th scope="col">Thao Tác</th>
             </tr>
-            <tr *ngFor = "let i of service.arrStudent" class="align-items-center">
+            <tr *ngFor = "let i of service.arrStudent | filter:searchText" class="text-center">
                 <th scope="col">{{i.MSSV}}</th>
                 <th scope="col">{{i.Ten}}</th>
                 <th scope="col">{{i.NgaySinh}}</th>

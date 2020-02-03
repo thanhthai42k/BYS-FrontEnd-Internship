@@ -1,13 +1,12 @@
 <div class=" d-flex justify-content-center">
     <div class="w-50 card">
         <div class="card-body border ">
-            <!-- <form (ngSubmit)="addStudent();"  [formGroup] ="form" > -->
-               
+            <form (ngSubmit)="addStudent();"  [formGroup] ="form" >
                 <app-student-form #formCreate  [typeAction]="'create'" [binding]="student"></app-student-form>
                 <div class="d-flex justify-content-center my-3">
-                    <button (click)="addStudent();" class=" btn btn-primary">Add Student</button>
+                    <button class=" btn btn-primary">Add Student</button>
                 </div>
-            <!-- </form> -->
+            </form>
         </div>
     </div> 
 </div>  

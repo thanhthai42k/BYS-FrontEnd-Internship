@@ -3,8 +3,7 @@ import { StudentService } from 'src/app/student.service';
 import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Student } from 'src/model/student';
 // import { Observer } from 'rxjs/internal/types';
-import { Observer } from 'rxjs';
-import { Button } from 'protractor';
+
 
 
 
@@ -19,6 +18,7 @@ export class StudentFormComponent implements OnInit {
   @Input () typeAction : string;
   @Input () binding: Student;
   @Input () typeButton : string;
+
    form: FormGroup;
 
   constructor(private service : StudentService) {
@@ -37,6 +37,8 @@ export class StudentFormComponent implements OnInit {
    if (this.typeAction !== 'edit' &&  this.typeAction !== 'create'){
       return this.form.disable();
    }
+
+  
   }
 
 addStudent() {
