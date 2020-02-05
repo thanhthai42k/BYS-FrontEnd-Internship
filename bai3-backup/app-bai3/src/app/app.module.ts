@@ -6,15 +6,13 @@ import {StudentService} from './student.service';
 import {StudenetModule} from './student/student.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-
-
-
+import {AuthGuard} from './auth.guard';
+import {HttpClientModule} from '@angular/common/http';
+import {AuthService} from './auth.service';
+// import {StudentService} from './student.service';
 @NgModule({
   declarations: [
-    AppComponent,
-   
-   
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +20,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     StudenetModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    HttpClientModule
   ],
-  providers: [StudentService],
+  providers: [StudentService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

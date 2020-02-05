@@ -6,10 +6,17 @@
         <div *ngIf="isShow"  class="mx-2">
             <a [routerLink] = "['student/list']">Student</a>
         </div>
+       
     </div> 
-    <div class="mx-2">
-        <a [routerLink] = "['/login']">Login</a>
+    <div class="mx-2 d-flex justify-content-between">
+        <a class="mx-3" [routerLink] = "['/login']">Login</a>
+        <a [routerLink] = "['']" (click)= "logout()">Logout</a>
+       
     </div>
+
+    <!-- <div class="mx-2">
+        <a [routerLink] = "['/logout']">Logout</a>
+    </div> -->
 </div>
 <router-outlet></router-outlet> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">

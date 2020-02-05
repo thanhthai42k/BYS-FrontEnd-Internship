@@ -9,6 +9,7 @@ import {StudentService} from '../student.service';
 import { Routes, RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {AuthGuard } from '../auth.guard';
 
 // const routes : Routes = [
 //   {path: 'student' , component: StudentListComponent,
@@ -34,7 +35,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 const routes : Routes = [
               // { path: 'student' , redirectTo: '/list', pathMatch: 'full'},
               { path: 'student/create' , component : StudentCreateComponent},
-              { path: 'student/list' , component : StudentListComponent},
+              { path: 'student/list' , component : StudentListComponent ,canActivate : [AuthGuard]},
               { path: 'student/edit/:mssv' , component : StudentEditComponent},
               { path: 'student/form' , component : StudentFormComponent},
               { path: 'student/detail/:mssv' , component : StudentDetailComponent}
