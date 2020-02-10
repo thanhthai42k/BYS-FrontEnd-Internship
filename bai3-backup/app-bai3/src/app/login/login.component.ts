@@ -52,12 +52,16 @@ submit() {
   this.authService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe((data) => {
      if (this.authService.isLoggedIn) {
         const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/student/list';
+        alert("Đăng nhập thành công");
         this.router.navigate([redirect]);
-      } else {
-        this.loginError = 'Email va password khong chinh xac';
-      }
+      } 
+      else {
+        this.loginError = 'Email va password không chính xác';
+        // console.log(this.loginError);
+      } 
     },
     error => this.error = error
+
   );
 }
 }

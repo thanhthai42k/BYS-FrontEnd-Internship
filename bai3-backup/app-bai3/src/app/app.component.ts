@@ -21,9 +21,9 @@ export class AppComponent implements OnInit {
 //  });
   }
  isShow = true;
- logout() {
-   localStorage.removeItem('item');
-this.router.navigate(['']);
+//  logout() {
+//    localStorage.removeItem('curentUser');
+// this.router.navigate(['']);
    
- }
+//  }
 }

@@ -2,6 +2,9 @@
     <form class="card w-25 h-50" (ngSubmit)="submit();" [formGroup]="formLogin">
         <div class="card-header text-center bg-primary text-white">ĐĂNG NHẬP</div>
         <div class="card-body">
+            <div class="alert alert-danger" *ngIf="loginError">
+                {{loginError}}
+             </div>
             <div class="form-group">
                 <div class="text-dark">Email</div>
                 <input type="email" class="form-control" required minlength="6" formControlName="email">

@@ -26,7 +26,7 @@ export class StudentEditComponent implements OnInit {
      ten: new FormControl() ,
      ngaysinh : new FormControl(),
      khoa:new FormControl() ,
-     chuyennghanh :new FormControl()  ,
+     chuyennghanh :new FormControl(),
      lop: new FormControl()   
     })
     this.activatedRoute.paramMap.subscribe(res => {

@@ -9,10 +9,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {AuthGuard} from './auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthService} from './auth.service';
+
 // import {StudentService} from './student.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,

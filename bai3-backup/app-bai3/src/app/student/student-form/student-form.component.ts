@@ -37,8 +37,6 @@ export class StudentFormComponent implements OnInit {
    if (this.typeAction !== 'edit' &&  this.typeAction !== 'create'){
       return this.form.disable();
    }
-
-  
   }
 
 addStudent() {

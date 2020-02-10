@@ -10,10 +10,10 @@ export class StudentService implements OnInit {
   results;
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
-     this.http.get("http://jsonplaceholder.typicode.com/users").subscribe(data => {
-      console.log(data);
-     this.results = data;
- });
+//      this.http.get("http://jsonplaceholder.typicode.com/users").subscribe(data => {
+//       console.log(data);
+//      this.results = data;
+//  });
   }
   arrStudent = [
     {MSSV: 1, Ten:'Nguyễn văn A', NgaySinh:'1997-1-10', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Quản trị hệ thống thông tin', Lop: '42k21'},

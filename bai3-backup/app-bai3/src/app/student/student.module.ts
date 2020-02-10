@@ -35,7 +35,8 @@ import {AuthGuard } from '../auth.guard';
 const routes : Routes = [
               // { path: 'student' , redirectTo: '/list', pathMatch: 'full'},
               { path: 'student/create' , component : StudentCreateComponent},
-              { path: 'student/list' , component : StudentListComponent ,canActivate : [AuthGuard]},
+              { path: 'student/list' , component : StudentListComponent ,canActivate : [AuthGuard]
+            },
               { path: 'student/edit/:mssv' , component : StudentEditComponent},
               { path: 'student/form' , component : StudentFormComponent},
               { path: 'student/detail/:mssv' , component : StudentDetailComponent}

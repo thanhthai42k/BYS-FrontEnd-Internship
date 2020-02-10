@@ -6,12 +6,14 @@
         <div *ngIf="isShow"  class="mx-2">
             <a [routerLink] = "['student/list']">Student</a>
         </div>
+        <div *ngIf="isShow"  class="mx-2">
+            <a [routerLink] = "['user/detail']">User</a>
+        </div>
        
     </div> 
     <div class="mx-2 d-flex justify-content-between">
         <a class="mx-3" [routerLink] = "['/login']">Login</a>
-        <a [routerLink] = "['']" (click)= "logout()">Logout</a>
-       
+ 
     </div>
 
     <!-- <div class="mx-2">
