@@ -1,5 +1,6 @@
+
 <div class="d-flex justify-content-center">
     <div class="w-50" >
-            <app-user-form [binding]= "userDetail"></app-user-form>
+            <app-user-form *ngIf= "userDetail" [binding]= "userDetail" [typeAction]="'detail'"></app-user-form>
     </div>
 </div>

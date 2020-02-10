@@ -33,7 +33,6 @@ customersObservable : Observable<User[]>;
     headers = headers.append('Authorization' , 'Bearer ' + localData.result.accessToken);
     return this.http.get<User[]>(userUrl ,{headers}); 
   }
-  
   }
   
 

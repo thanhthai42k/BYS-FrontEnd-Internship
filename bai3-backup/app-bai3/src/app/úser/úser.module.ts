@@ -7,7 +7,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserFormComponent } from './user-form/user-form.component';
 const routes : Routes = [
-  {path: 'user/detail' , component: UserDetailComponent}
+  {path: 'user/detail' , component: UserDetailComponent,
+
+},
+  {path: 'user/edit' , component: UserEditComponent}
 ]
 @NgModule({
   declarations: [UserDetailComponent, UserEditComponent, UserFormComponent],
