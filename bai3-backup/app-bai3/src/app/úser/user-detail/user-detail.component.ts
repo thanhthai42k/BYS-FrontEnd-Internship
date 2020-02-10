@@ -15,10 +15,9 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
-  @Input() binding : User;
-  userDetail= new User();
-  form : FormGroup;
-  data1;
+ 
+  // form : FormGroup;
+  userDetail = new User();
   constructor(private user: UserService, private http: HttpClient) {
   //   const localData = JSON.parse(localStorage.getItem('currentUser'));
   //   console.log(localData.result.userId);
@@ -30,20 +29,21 @@ export class UserDetailComponent implements OnInit {
   //   )
    }
   ngOnInit() {
-    this.form =  new FormGroup({
-     hoten: new FormControl(),
-     email: new FormControl() ,
-     sodienthoai : new FormControl(),
-     diachi : new FormControl(),
-    });
+     
+    // this.form =  new FormGroup({
+    //  hoten: new FormControl(),
+    //  email: new FormControl() ,
+    //  sodienthoai : new FormControl(),
+    //  diachi : new FormControl(),
+    // });
     const localData = JSON.parse(localStorage.getItem('currentUser'));
      this.user.getDataUserById(localData.result.userId).subscribe(data => {
-      this.userDetail.Ten = data.result.firstName + ' ' + data.result.lastName,
+       console.log(data.result)
+      this.userDetail.Ten = data.result.userName,
       this.userDetail.Email = data.result.email,
       this.userDetail.SDT = data.result.phoneNumber,
       this.userDetail.Diachi = data.result.address,
       console.log(this.userDetail)
     })
   }
-  
 }

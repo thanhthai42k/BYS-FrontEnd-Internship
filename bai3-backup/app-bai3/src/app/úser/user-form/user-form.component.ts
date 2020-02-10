@@ -10,8 +10,8 @@ import {UserService} from '../../user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-  form : FormGroup;
   @Input() binding : User;
+  form : FormGroup;
   constructor(private http: HttpClient, private service : UserService  ) { }
 
   ngOnInit() {

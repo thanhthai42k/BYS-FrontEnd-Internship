@@ -12,7 +12,6 @@ export class UserService {
 repos;
 customersObservable : Observable<User[]>;
   constructor(private http: HttpClient) { }
-  userUrl = 'http://115.79.35.119:9004/api/hbc/user/{id}';
 //  userUrl = 'http://jsonplaceholder.typicode.com/users';
 
   //  getData() {
@@ -32,10 +31,9 @@ customersObservable : Observable<User[]>;
     let headers = new HttpHeaders();
     const localData = JSON.parse(localStorage.getItem('currentUser'));
     headers = headers.append('Authorization' , 'Bearer ' + localData.result.accessToken);
-    return this.http.get<User[]>(userUrl ,{headers});  
-     
+    return this.http.get<User[]>(userUrl ,{headers}); 
   }
-
+  
   }
   
 
