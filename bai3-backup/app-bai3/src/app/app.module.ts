@@ -9,6 +9,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {AuthGuard} from './auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthService} from './auth.service';
+import { UsergroupService } from './usergroup.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import { ScrollingModule } from '@angular/cdk/scrolling';
+
+
 
 // import {StudentService} from './student.service';
 @NgModule({
@@ -23,9 +28,12 @@ import {AuthService} from './auth.service';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    // ScrollingModule,
+    
   ],
-  providers: [StudentService, AuthGuard, AuthService],
+  providers: [StudentService, AuthGuard, AuthService, UsergroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

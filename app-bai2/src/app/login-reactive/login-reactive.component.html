@@ -6,7 +6,9 @@
                 <input class="form-control" type="text" placeholder="Email" formControlName ="newusername">
                 <div *ngIf="formreactive.touched && formreactive.controls.newusername?.errors?.required" class="text-center text-danger col alert alert-danger" role="alert">Email không được để trống</div>
                 <!-- <div *ngIf="formreactive.touched && formreactive.controls.newusername?.errors?.email" class="text-center text-danger col alert alert-danger" role="alert">Định dạng email không đúng</div> -->
-                <div *ngIf=" formreactive.controls.newusername?.errors?.minlength" class="text-center text-danger col alert alert-danger"><small>Email không được dưới 6 kí tự </small></div>
+                <div *ngIf=" formreactive.controls.newusername?.errors?.minlength" class="text-center text-danger col alert alert-danger"><small>Email không được dưới 6 kí tự 
+                    
+                </small></div>
             </div>
             <div class="form-group p-2 mx-2">
                 <input class="form-control" type="password" placeholder="Mật khẩu" formControlName ="newpassword" >

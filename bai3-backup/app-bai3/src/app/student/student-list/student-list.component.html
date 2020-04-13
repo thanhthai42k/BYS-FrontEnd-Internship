@@ -5,11 +5,9 @@
           </div>
   </div>
 </div>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center table-wrapper-scroll-y my-custom-scrollbar">
     <table class=" table table-striped w-75 ">
-        <div class="d-flex justify-content-center my-3">
-            <a [routerLink] = "['/student/create']" class="btn btn-primary text-light" >Add Student</a>
-        </div>
+        
         <thead class="border">
             <tr class="bg-primary text-white text-center">
                 <th scope="col">#MSSV</th>
@@ -20,13 +18,13 @@
                 <th scope="col">LỚP</th>
                 <th scope="col">Thao Tác</th>
             </tr>
-            <tr *ngFor = "let i of service.arrStudent | filter:searchText" class="text-center">
-                <th scope="col">{{i.MSSV}}</th>
-                <th scope="col">{{i.Ten}}</th>
-                <th scope="col">{{i.NgaySinh}}</th>
-                <th scope="col">{{i.Khoa}}</th>
-                <th scope="col">{{i.ChuyenNghanh}}</th>
-                <th scope="col">{{i.Lop}}</th>
+            <tr *ngFor = "let i of service.arrStudent | filter:searchText" class="text-center list-group-item-action">
+                <th scope="col" class="border" >{{i.MSSV}}</th>
+                <th scope="col " class="border">{{i.Ten}}</th>
+                <th scope="col" class="border">{{i.NgaySinh}}</th>
+                <th scope="col" class="border">{{i.Khoa}}</th>
+                <th scope="col" class="border">{{i.ChuyenNghanh}}</th>
+                <th scope="col" class="border">{{i.Lop}}</th>
                 <div class="d-flex my-2">
                 <button (click)= "removeStudent(i.MSSV);" class="btn d-flex justify-content-center mx-1" style="height: 30px; width: 30px;"><i class="fas fa-trash-alt"></i></button>
                 <button [routerLink] = "['/student/edit', i.MSSV]" class="btn d-flex justify-content-center mx-1" style="height: 30px; width: 30px;"><i class="fas fa-pencil-alt"></i></button>
@@ -36,4 +34,8 @@
         </thead>
        
     </table>
+    
+</div>
+<div class="d-flex justify-content-center my-3">
+    <a [routerLink] = "['/student/create']" class="btn btn-primary text-light" >Add Student</a>
 </div>

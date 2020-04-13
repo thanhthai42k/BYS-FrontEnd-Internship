@@ -23,6 +23,12 @@ export class StudentService implements OnInit {
     {MSSV: 5, Ten:'Nguyễn Mạnh E', NgaySinh:'1998-10-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Thống kê KTXH', Lop: '42k05'},
     {MSSV: 6, Ten:'Nguyễn Công F', NgaySinh:'1998-10-5', Khoa: 'Luật', ChuyenNghanh: 'Luật doanh nghiệp', Lop: '42k19'},
     {MSSV: 7, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
+    {MSSV: 8, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
+    {MSSV: 9, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
+    {MSSV: 10, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
+    {MSSV:11, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
+    {MSSV: 12, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
+    {MSSV: 13, Ten:'Hoàng Thắng T', NgaySinh:'1998-1-5', Khoa: 'Thống kê tin học', ChuyenNghanh: 'Tin học quản lý', Lop: '42k14'},
   ];
   arrUser = [
     {userName: 'ad', password: '1'},
